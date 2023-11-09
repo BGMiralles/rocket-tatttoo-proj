@@ -1,5 +1,5 @@
 {
-  "name": "rocket-tattoo",
+  "name": "enrutado",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,8 +11,6 @@
   },
   "dependencies": {
     "axios": "^1.6.1",
-    "jsonwebtoken": "^9.0.2",
-    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0"
