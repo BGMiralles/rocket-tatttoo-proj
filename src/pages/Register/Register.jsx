@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Register.css";
 import { CustomInput } from "../../common/CustomInput/CustomInput";
-import { logUser } from "../../services/apiCalls";
+import { registerUser } from "../../services/apiCalls";
 import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {
@@ -28,7 +28,7 @@ export const Register = () => {
 
   const registerMe = () => {
 
-    logUser(credenciales)
+    registerUser(credenciales)
         .then(
             resultado => {
                 console.log(resultado)
@@ -36,7 +36,7 @@ export const Register = () => {
 
                 //Una vez guardado el token....nos vamos a home....
                 setTimeout(()=>{
-                    navigate("/");
+                    navigate("/login");
                 },500);
             }
         )
@@ -48,8 +48,26 @@ export const Register = () => {
     <div className="loginDesign">
       <CustomInput
         design={"inputDesign"}
+        type={"string"}
+        name={"username"}
+        placeholder={""}
+        // value={}
+        functionProp={functionHandler}
+        // onBlur={}
+      />
+      <CustomInput
+        design={"inputDesign"}
         type={"email"}
         name={"email"}
+        placeholder={""}
+        // value={}
+        functionProp={functionHandler}
+        // onBlur={}
+      />
+      <CustomInput
+        design={"inputDesign"}
+        type={"phone"}
+        name={"phone_number"}
         placeholder={""}
         // value={}
         functionProp={functionHandler}
@@ -64,7 +82,7 @@ export const Register = () => {
         functionProp={functionHandler}
         // onBlur={}
       />
-      <div className='buttonSubmit' onClick={logMe}>Log Me!</div>
+      <div className='buttonSubmit' onClick={registerMe}>Register Me!</div>
     </div>
   );
 };
