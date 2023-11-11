@@ -3,38 +3,62 @@ import "./Register.css";
 import { CustomInput } from "../../common/CustomInput/CustomInput";
 import { registerUser } from "../../services/apiCalls";
 import { useNavigate } from 'react-router-dom';
+import { validator } from "../../services/useful";
 
 export const Register = () => {
 
   const navigate = useNavigate();
 
-  const [credenciales, setCredenciales] = useState({
+  const [user, setUser] = useState({
     username: "",
     email: "",
     phone_number: "",
     password: "",
   });
 
+  const [userError, setUserError] = useState({
+    usernameError: "",
+    emailError: "",
+    phone_numberError: "",
+    passwordError: "",
+  });
+
   const functionHandler = (e) => {
-    setCredenciales((prevState) => ({
+    setUser((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value
     }));
   };
 
-//   useEffect(()=>{
-//     console.log(credenciales);
-//   },[credenciales]);
+  const errorCheck = (e) => {
 
-  const registerMe = () => {
+    let error = "";
+
+    error = validator(e.target.name, e.target.value);
+
+    setUserError((prevState) => ({
+        ...prevState,
+        [e.target.name + 'Error']: error,
+    }));
+  }
+
+  const Submit = () => {
+    for(let test1 in user){
+      if(user[test1] === ""){
+        return;
+      }
+
+    }
+
+    for(let test in userError){
+      if(userError[test] !== ""){
+        return;
+      }
+    }
 
     registerUser(credenciales)
         .then(
-            resultado => {
-                console.log(resultado)
-                //Aqui guardaría el token........
-
-                //Una vez guardado el token....nos vamos a home....
+            resultado => {                           
                 setTimeout(()=>{
                     navigate("/login");
                 },500);
@@ -45,44 +69,48 @@ export const Register = () => {
   }
 
   return (
-    <div className="loginDesign">
+    <div className="registerDesign">
       <CustomInput
-        design={"inputDesign"}
+        design={`inputDesign ${userError.usernameError !== "" ? 'inputDesignError' : ''}`}
         type={"string"}
         name={"username"}
         placeholder={""}
         // value={}
         functionProp={functionHandler}
-        // onBlur={}
+        functionBlur={errorCheck}
       />
+      <div className='errorMsg'>{userError.usernameError}</div>
       <CustomInput
-        design={"inputDesign"}
+        design={`inputDesign ${userError.emailError !== "" ? 'inputDesignError' : ''}`}
         type={"email"}
         name={"email"}
         placeholder={""}
         // value={}
         functionProp={functionHandler}
-        // onBlur={}
+        functionBlur={errorCheck}
       />
+      <div className='errorMsg'>{userError.emailError}</div>
       <CustomInput
-        design={"inputDesign"}
+        design={`inputDesign ${userError.phone_numberError !== "" ? 'inputDesignError' : ''}`}
         type={"phone"}
         name={"phone_number"}
         placeholder={""}
         // value={}
         functionProp={functionHandler}
-        // onBlur={}
+        functionBlur={errorCheck}
       />
+      <div className='errorMsg'>{userError.phone_numberError}</div>
       <CustomInput
-        design={"inputDesign"}
+        design={`inputDesign ${userError.passwordError !== "" ? 'inputDesignError' : ''}`}
         type={"password"}
         name={"password"}
         placeholder={""}
         // value={}
         functionProp={functionHandler}
-        // onBlur={}
+        functionBlur={errorCheck}
       />
-      <div className='buttonSubmit' onClick={registerMe}>Submit</div>
+      <div className='errorMsg'>{userError.passwordError}</div>
+      <div className='buttonSubmit' onClick={Submit}>Submit</div>
     </div>
   );
 };
