@@ -1,39 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
 import "./Register.css";
 import { CustomInput } from "../../common/CustomInput/CustomInput";
 import { registerUser } from "../../services/apiCalls";
-import { validator } from "../../services/useful";
+import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {
 
   const navigate = useNavigate();
 
-  const [user, setUser] = useState({
+  const [credenciales, setCredenciales] = useState({
     username: "",
     email: "",
     phone_number: "",
     password: "",
   });
 
-  const [userError, setUserError] = useState({
-    usernameError: "",
-    emailError: "",
-    phone_numberError: "",
-    passwordError: "",
-  });
-  
   const functionHandler = (e) => {
-    setUser((prevState) => ({
+    setCredenciales((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value
     }));
   };
-
-  const errorCheck = (e) => {
-    let error = ""
-    error = validator(e.target.name, e.target.value)
-  }
 
 //   useEffect(()=>{
 //     console.log(credenciales);
@@ -41,7 +28,7 @@ export const Register = () => {
 
   const registerMe = () => {
 
-    registerUser(user)
+    registerUser(credenciales)
         .then(
             resultado => {
                 console.log(resultado)
@@ -61,14 +48,13 @@ export const Register = () => {
     <div className="loginDesign">
       <CustomInput
         design={"inputDesign"}
-        type={"text"}
+        type={"string"}
         name={"username"}
         placeholder={""}
         // value={}
         functionProp={functionHandler}
-        funtionBlur={errorCheck}
+        // onBlur={}
       />
-      <div>{userError.usernameError}</div>
       <CustomInput
         design={"inputDesign"}
         type={"email"}
@@ -76,19 +62,17 @@ export const Register = () => {
         placeholder={""}
         // value={}
         functionProp={functionHandler}
-        funtionBlur={errorCheck}
+        // onBlur={}
       />
-      <div>{userError.emailError}</div>
       <CustomInput
         design={"inputDesign"}
-        type={"text"}
+        type={"phone"}
         name={"phone_number"}
         placeholder={""}
         // value={}
         functionProp={functionHandler}
-        funtionBlur={errorCheck}
+        // onBlur={}
       />
-      <div>{userError.phone_numberError}</div>
       <CustomInput
         design={"inputDesign"}
         type={"password"}
@@ -96,10 +80,9 @@ export const Register = () => {
         placeholder={""}
         // value={}
         functionProp={functionHandler}
-        funtionBlur={errorCheck}
+        // onBlur={}
       />
-      <div>{userError.passwordError}</div>
-      <div className='buttonSubmit' onClick={registerMe}>Register Me!</div>
+      <div className='buttonSubmit' onClick={registerMe}>Submit</div>
     </div>
   );
 };
