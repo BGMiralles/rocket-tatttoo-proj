@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto+Slab:wght@500&display=swap');
+
 
 .headerDesign {
 
-    height: 16vh;
+    height: 5vh;
     width: 100vw;
 
-    background-color: darkcyan;
+    background-color: #f47e8e;
 
     display: flex;
     flex-direction: row;
@@ -13,4 +15,6 @@
 
     color: white;
     font-weight: bold;
+    font-size: 1.5em;
+    font-family: agbalumo;
 }

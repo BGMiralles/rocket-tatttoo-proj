@@ -4,9 +4,16 @@ import { CustomInput } from "../../common/CustomInput/CustomInput";
 import { logUser } from "../../services/apiCalls";
 import { useNavigate } from 'react-router-dom';
 
+//Importo Rdx
+
+import { useDispatch } from "react-redux";  //useDispatch es necesario para emitir acciones
+import { login } from "../userSlice";
+
 export const Login = () => {
 
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const [credenciales, setCredenciales] = useState({
     email: "",
@@ -22,6 +29,10 @@ export const Login = () => {
     }));
   };
 
+  const errorCheck = () => {
+    console.log("ha ha ha ha");
+  }
+
 //   useEffect(()=>{
 //     console.log(credenciales);
 //   },[credenciales]);
@@ -32,12 +43,12 @@ export const Login = () => {
         .then(
             resultado => {
                 console.log(resultado)
-                //Aqui guardaría el token........
+                //Aqui guardaría el token........en RDXXX
+                dispatch(login({ credentials: resultado.data }))
 
                 //Una vez guardado el token....nos vamos a home....
-                setTimeout(()=>{
-                    navigate("/");
-                },500);
+                navigate("/");
+                
             }
         )
         .catch(error => {
@@ -49,25 +60,27 @@ export const Login = () => {
 
   return (
     <div className="loginDesign">
+      <label className="labelLogin">Email</label>
       <CustomInput
         design={"inputDesign"}
         type={"email"}
         name={"email"}
-        placeholder={""}
+        placeholder={"Email"}
         // value={}
         functionProp={functionHandler}
-        // onBlur={}
+        functionBlur={errorCheck}
       />
+      <label className="labelLogin">Password</label>
       <CustomInput
         design={"inputDesign"}
         type={"password"}
         name={"password"}
-        placeholder={""}
+        placeholder={"Password"}
         // value={}
         functionProp={functionHandler}
-        // onBlur={}
+        functionBlur={errorCheck}
       />
-      <div className='buttonSubmit' onClick={logMe}>Log Me!</div>
+      <div className='buttonLogin' onClick={logMe}>Log Me!</div>
       <div>{msgError}</div>
     </div>
   );
