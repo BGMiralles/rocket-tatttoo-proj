@@ -15,7 +15,7 @@ export const StaticNavbar = () => {
           <Nav className="ms-auto navbar-links">
             <Nav.Link className='text-navbar items-navbar' href="/">HOME</Nav.Link>
             <Nav.Link className='text-navbar items-navbar' href="/gallery">GALLERY</Nav.Link>
-            <Nav.Link className='text-navbar items-navbar' href="/crew">CREW</Nav.Link>
+            <Nav.Link className='text-navbar items-navbar' href="/crew">ABOUT US</Nav.Link>
             <Nav.Link className='text-navbar items-navbar' href="/login">LOGIN</Nav.Link>
             <Nav.Link className='text-navbar items-navbar' href="/register">REGISTER</Nav.Link>
           </Nav>
