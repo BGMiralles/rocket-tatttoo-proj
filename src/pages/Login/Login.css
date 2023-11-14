@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto+Slab:wght@500&display=swap');
+
 .loginDesign {
   height: 100vh;
   width: 100vw;
@@ -11,16 +13,10 @@
   background-size: cover;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 0.5em solid #5086c1;
-  padding: 0.5em;
-  -webkit-box-shadow: 0px 10px 24px 29px rgba(5, 5, 5, 1);
-  -moz-box-shadow: 0px 10px 24px 29px rgba(5, 5, 5, 1);
-  box-shadow: 0px 10px 24px 29px rgba(5, 5, 5, 1);
+.header {
+  font-family: "Agbalumo", cursive;
+  font-size: 2.5em;
+  color: gold;
 }
 
 .buttonLogin {

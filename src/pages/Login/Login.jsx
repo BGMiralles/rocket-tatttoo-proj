@@ -3,7 +3,7 @@ import "./Login.css";
 
 import { CustomInput } from "../../common/CustomInput/CustomInput";
 import { validator } from "../../services/useful";
-import { registerUser } from "../../services/apiCalls";
+import { logUser } from "../../services/apiCalls";
 import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
@@ -11,17 +11,13 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
-    name: '',
     email: '',
-    password: '',
-    phone: ''
+    password: ''
   })
 
   const [userError, setUserError] = useState({
-    nameError: '',
     emailError: '',
-    passwordError: '',
-    phoneError: ''
+    passwordError: ''
   })
 
 
@@ -44,7 +40,7 @@ export const Login = () => {
     }));
   }
 
-  const Submit = () => {
+  const LogMe = () => {
 
     for(let test1 in user){
       if(user[test1] === ""){
@@ -59,11 +55,11 @@ export const Login = () => {
       }
     }
 
-    registerUser(user)
+    logUser(user)
       .then(
         resultado => {
           //si todo ha ido bien, redirigiremos a login...
-            navigate("/login");          
+            navigate("/");          
         }
       )
       .catch(error=> console.log(error));
@@ -71,7 +67,7 @@ export const Login = () => {
 
   return (
     <div className="loginDesign">
-      <label>Email</label>
+      <div className="header">Email</div>
       <CustomInput
         design={`inputDesign ${userError.emailError !== "" ? 'inputDesignError' : ''}`}
         type={"email"}
@@ -82,7 +78,7 @@ export const Login = () => {
         functionBlur={errorCheck}
       />
       <div className='errorMsg'>{userError.emailError}</div>
-      <label>Password</label>
+      <div className="header">Password</div>
       <CustomInput
         design={`inputDesign ${userError.passwordError !== "" ? 'inputDesignError' : ''}`}
         type={"password"}
@@ -93,7 +89,7 @@ export const Login = () => {
         functionBlur={errorCheck}
       />
       <div className='errorMsg'>{userError.passwordError}</div>
-      <div className='buttonSubmit' onClick={Submit}>Login</div>
+      <div className='buttonSubmit' onClick={LogMe}>Login</div>
     </div>
   );
 };

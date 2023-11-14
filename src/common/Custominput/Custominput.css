@@ -9,10 +9,10 @@
     color: white;
 
     border-radius: 0.5em;
-    border: 1 solid yellow;
+    border: 5px solid gold;
 
     margin-bottom: 1.5em;
-    background-color: #f47e8e;
+    background-color: transparent;
     opacity: 80%;
 }
 
@@ -43,7 +43,7 @@ input::placeholder {
 
 .inputDesignError {
 
-    border: 0.2em red solid;
+    border: 0.2em solid gold;
 
 }
 
