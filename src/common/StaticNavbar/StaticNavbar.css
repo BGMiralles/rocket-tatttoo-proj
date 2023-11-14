@@ -7,7 +7,6 @@
 .headerLogo {
     height: 4em;
     width: 3.2em;
-    opacity: 1;
 }
 
 .headerLogo:hover {
@@ -16,7 +15,7 @@
 }
 
 .blueColour {
-    color: var(--azul);
+    color: gold;
 }
 
 .text-navbar {

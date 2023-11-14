@@ -1,0 +1,41 @@
+ .bannerHeader {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .background-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .logoPage{
+    width: 120%;
+    height: 120%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .logoPage {
+        width: 80%;
+      }
+      .background-banner{
+        
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit:fill;
+      }
+}
+
+@media screen and (max-width: 480px) {
+    .logoPage {
+        width: 60%;
+}
+}
