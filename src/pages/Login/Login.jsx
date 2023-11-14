@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
-import { CustomInput } from "../../common/CustomInput/CustomInput";
+import { CustomInput } from "../../common/Custominput/Custominput";
 import { logUser } from "../../services/apiCalls";
 import { useNavigate } from 'react-router-dom';
 
@@ -60,26 +60,28 @@ export const Login = () => {
 
   return (
     <div className="loginDesign">
-      <label className="labelLogin">Email</label>
-      <CustomInput
-        design={"inputDesign"}
-        type={"email"}
-        name={"email"}
-        placeholder={"Email"}
-        // value={}
-        functionProp={functionHandler}
-        functionBlur={errorCheck}
-      />
-      <label className="labelLogin">Password</label>
-      <CustomInput
-        design={"inputDesign"}
-        type={"password"}
-        name={"password"}
-        placeholder={"Password"}
-        // value={}
-        functionProp={functionHandler}
-        functionBlur={errorCheck}
-      />
+      <div className="form">
+        <label className="labelLogin">Email</label>
+        <CustomInput
+          design={"inputDesign"}
+          type={"email"}
+          name={"email"}
+          placeholder={"Email"}
+          // value={}
+          functionProp={functionHandler}
+          functionBlur={errorCheck}
+        />
+        <label className="labelLogin">Password</label>
+        <CustomInput
+          design={"inputDesign"}
+          type={"password"}
+          name={"password"}
+          placeholder={"Password"}
+          // value={}
+          functionProp={functionHandler}
+          functionBlur={errorCheck}
+        />
+      </div>
       <div className='buttonLogin' onClick={logMe}>Log Me!</div>
       <div>{msgError}</div>
     </div>

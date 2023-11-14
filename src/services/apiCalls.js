@@ -16,7 +16,7 @@ export const registerUser = async (body) => {
     return await axios.post(`http://localhost:4004/user/register`, body);
 }
 
-export const bringCharacters = async () => {
+export const bringTattooArtists = async () => {
 
-    return await axios.get(`https://rickandmortyapi.com/api/character/?page=1`);
+    return await axios.get(`https://localhost:4004/artist/all`);
 }

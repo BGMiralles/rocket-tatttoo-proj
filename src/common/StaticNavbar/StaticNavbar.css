@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto+Slab:wght@500&display=swap');
+
+.navbarStatic {
+    font-family: 'Agbalumo', cursive;
+}
+
+.headerLogo {
+    height: 4em;
+    width: 3.2em;
+    opacity: 1;
+}
+
+.headerLogo:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.blueColour {
+    color: var(--azul);
+}
+
+.text-navbar {
+    font-size: 1.8em;
+    color: white;
+}
+
+.text-navbar-title {
+    font-size: 1.9em;
+}
+
+.items-navbar:hover {
+    cursor: pointer;
+    color: var(--azul);
+}
