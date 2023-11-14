@@ -11,20 +11,21 @@
     background-image: url('../../img/home-example.jpg');
     object-fit: cover;
     background-repeat: no-repeat;
-    
+    overflow: hidden;
 }
 
 .tattooInfo {
     color: gold;
     font-size: 5em;
     margin-top: 1em;
+    overflow: hidden;
 }
 
 .stylesInfo {
     color: white;
     font-size: 20px;
     width: 50%;
-
+    overflow: hidden;   
 }
 
 .stylesBanner {
@@ -40,10 +41,33 @@
 .image-tattoo {
     max-width: 25%;
     height: auto;
-    border: solid 2px gold;
+    border: solid 2px gold;      
   }
 
-  .image-tattoo:hover {
+.image-tattoo:hover {
     scale: 1.1;
     transition: 0.2s;
+    -webkit-animation: image-tattoo 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        animation: image-tattoo 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  }
+
+@-webkit-keyframes image-tattoo {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
+  }
+@keyframes image-tattoo {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
   }

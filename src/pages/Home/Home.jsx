@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Home.css";
-import { Container, Row, Col } from "react-bootstrap";
-import { ArtistsCards } from "../../common/ArtistsCard/ArtistsCard";
 import { StaticNavbar } from "../../common/StaticNavbar/StaticNavbar";
 import { Banner } from "../../common/BannerHome/BannerHome";
 import { AboutUs } from "../../common/AboutUs/AboutUs";

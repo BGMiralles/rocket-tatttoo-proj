@@ -7,6 +7,7 @@
 .headerLogo {
     height: 4em;
     width: 3.2em;
+    filter: drop-shadow(0 1px 1px gold);
 }
 
 .headerLogo:hover {

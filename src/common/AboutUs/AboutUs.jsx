@@ -1,20 +1,31 @@
-import React from 'react';
-import './AboutUs.css';
-import Button from 'react-bootstrap/Button';
+import React from "react";
+import "./AboutUs.css";
+import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 
 export const AboutUs = () => {
-    return (
-        <div className='aboutUsDesign'>
-            <div className='aboutUsDiv'>
-                <img className='aboutUsLogo' src='../src/img/logo.png' alt="Logo" />
-                <div className='textAboutUs'>
-                    <p><span className='colourText'>Bienvenido a nuestro estudio de tatuajes Rocket Tattoo</span>, donde la tradición se encuentra con la innovación para crear obras maestras atemporales en la <span className='colourText'>piel</span>. Nos enorgullece fusionar la estética clásica del Old School con un toque moderno y fresco, brindando a nuestros clientes una experiencia única. </p>
-                    <div className='buttonBookDiv'>
-                        <Button className='appointmentAboutUs'>About Us</Button>
-                    </div>
-                </div>
-
-            </div>
+  const navigate = useNavigate();
+  return (
+    <div className="aboutUsDesign">
+      <div className="aboutUsDiv">
+        <img className="aboutUsLogo" src="../src/img/logo.png" alt="Logo" />
+        <div className="textAboutUs">
+          <p>
+            <span className="colourText">
+              Welcome to our Rocket Tattoo studio
+            </span>
+            , where tradition meets innovation to create timeless masterpieces
+            on the skin. We take pride in{" "}
+            <span className="colourText">blending </span>the classic aesthetics
+            of <span className="colourText"> Old School </span>with a modern and
+            fresh touch, providing our clients with a{" "}
+            <span className="colourText">unique experience </span>
+          </p>
+          <div className="buttonBookDiv">
+            <Button className="appointmentAboutUs" onClick={()=> navigate("/about")}>About Us</Button>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
