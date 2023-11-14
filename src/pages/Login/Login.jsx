@@ -1,89 +1,99 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
-import { CustomInput } from "../../common/Custominput/Custominput";
-import { logUser } from "../../services/apiCalls";
+
+import { CustomInput } from "../../common/CustomInput/CustomInput";
+import { validator } from "../../services/useful";
+import { registerUser } from "../../services/apiCalls";
 import { useNavigate } from 'react-router-dom';
-
-//Importo Rdx
-
-import { useDispatch } from "react-redux";  //useDispatch es necesario para emitir acciones
-import { login } from "../userSlice";
 
 export const Login = () => {
 
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+    phone: ''
+  })
 
-  const [credenciales, setCredenciales] = useState({
-    email: "",
-    password: "",
-  });
+  const [userError, setUserError] = useState({
+    nameError: '',
+    emailError: '',
+    passwordError: '',
+    phoneError: ''
+  })
 
-  const [msgError, setMsgError] = useState('');
 
   const functionHandler = (e) => {
-    setCredenciales((prevState) => ({
+    setUser((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
-  const errorCheck = () => {
-    console.log("ha ha ha ha");
+  const errorCheck = (e) => {
+
+    let error = "";
+
+    error = validator(e.target.name, e.target.value);
+
+    setUserError((prevState) => ({
+        ...prevState,
+        [e.target.name + 'Error']: error,
+    }));
   }
 
-//   useEffect(()=>{
-//     console.log(credenciales);
-//   },[credenciales]);
+  const Submit = () => {
 
-  const logMe = () => {
+    for(let test1 in user){
+      if(user[test1] === ""){
+        return;
+      }
 
-    logUser(credenciales)
-        .then(
-            resultado => {
-                console.log(resultado)
-                //Aqui guardaría el token........en RDXXX
-                dispatch(login({ credentials: resultado.data }))
+    }
 
-                //Una vez guardado el token....nos vamos a home....
-                navigate("/");
-                
-            }
-        )
-        .catch(error => {
-          console.log(error)
-          setMsgError(error.message);
-        });
+    for(let test in userError){
+      if(userError[test] !== ""){
+        return;
+      }
+    }
 
+    registerUser(user)
+      .then(
+        resultado => {
+          //si todo ha ido bien, redirigiremos a login...
+            navigate("/login");          
+        }
+      )
+      .catch(error=> console.log(error));
   }
 
   return (
     <div className="loginDesign">
-      <div className="form">
-        <label className="labelLogin">Email</label>
-        <CustomInput
-          design={"inputDesign"}
-          type={"email"}
-          name={"email"}
-          placeholder={"Email"}
-          // value={}
-          functionProp={functionHandler}
-          functionBlur={errorCheck}
-        />
-        <label className="labelLogin">Password</label>
-        <CustomInput
-          design={"inputDesign"}
-          type={"password"}
-          name={"password"}
-          placeholder={"Password"}
-          // value={}
-          functionProp={functionHandler}
-          functionBlur={errorCheck}
-        />
-      </div>
-      <div className='buttonLogin' onClick={logMe}>Log Me!</div>
-      <div>{msgError}</div>
+      <label>Email</label>
+      <CustomInput
+        design={`inputDesign ${userError.emailError !== "" ? 'inputDesignError' : ''}`}
+        type={"email"}
+        name={"email"}
+        placeholder={""}
+        // value={}
+        functionProp={functionHandler}
+        functionBlur={errorCheck}
+      />
+      <div className='errorMsg'>{userError.emailError}</div>
+      <label>Password</label>
+      <CustomInput
+        design={`inputDesign ${userError.passwordError !== "" ? 'inputDesignError' : ''}`}
+        type={"password"}
+        name={"password"}
+        placeholder={""}
+        // value={}
+        functionProp={functionHandler}
+        functionBlur={errorCheck}
+      />
+      <div className='errorMsg'>{userError.passwordError}</div>
+      <div className='buttonSubmit' onClick={Submit}>Login</div>
     </div>
   );
 };

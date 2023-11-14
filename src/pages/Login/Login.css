@@ -1,121 +1,117 @@
 .loginDesign {
-    height: 95vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    background-image: url(../../img/login.JPG);
-    background-size: cover;
+  background-image: url(../../img/login.jpg);
+  background-size: cover;
 }
 
 .form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 0.5em solid #5086c1;
-        padding: 0.5em;
-        -webkit-box-shadow:0px 10px 24px 29px rgba(5,5,5,1);
-        -moz-box-shadow: 0px 10px 24px 29px rgba(5,5,5,1);
-        box-shadow: 0px 10px 24px 29px rgba(5,5,5,1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.5em solid #5086c1;
+  padding: 0.5em;
+  -webkit-box-shadow: 0px 10px 24px 29px rgba(5, 5, 5, 1);
+  -moz-box-shadow: 0px 10px 24px 29px rgba(5, 5, 5, 1);
+  box-shadow: 0px 10px 24px 29px rgba(5, 5, 5, 1);
 }
 
 .buttonLogin {
-    height: 3em;
-    width: 8em;
-    font-size: 1.5em;
+  height: 3em;
+  width: 8em;
+  font-size: 1.5em;
 
-    border-radius: 1em;
-    background-color: #5086c1;
-    color: white;
-    font-weight: bolder;
+  border-radius: 1em;
+  background-color: #5086c1;
+  color: white;
+  font-weight: bolder;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5em;
-    
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
 }
 
 @-webkit-keyframes buttonLogin {
-    from {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-transform-origin: center center;
-              transform-origin: center center;
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    10% {
-      -webkit-transform: scale(0.91);
-              transform: scale(0.91);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    17% {
-      -webkit-transform: scale(0.98);
-              transform: scale(0.98);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    33% {
-      -webkit-transform: scale(0.87);
-              transform: scale(0.87);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    45% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
-  @keyframes buttonLogin {
-    from {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-transform-origin: center center;
-              transform-origin: center center;
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    10% {
-      -webkit-transform: scale(0.91);
-              transform: scale(0.91);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    17% {
-      -webkit-transform: scale(0.98);
-              transform: scale(0.98);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    33% {
-      -webkit-transform: scale(0.87);
-              transform: scale(0.87);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    45% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
-  
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes buttonLogin {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
 
 .buttonLogin:hover {
-
-    transition: 0.4s;
-    background-color: #f47e8e;
-    cursor: pointer;
-    -webkit-animation: buttonLogin 1.5s ease-in-out infinite both;
-	        animation: buttonLogin 1.5s ease-in-out infinite both;
+  transition: 0.4s;
+  background-color: #f47e8e;
+  cursor: pointer;
+  -webkit-animation: buttonLogin 1.5s ease-in-out infinite both;
+  animation: buttonLogin 1.5s ease-in-out infinite both;
 }
