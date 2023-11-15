@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
-
 import { CustomInput } from "../../common/CustomInput/CustomInput";
 import { validator } from "../../services/useful";
 import { logUser } from "../../services/apiCalls";
 import { useNavigate } from 'react-router-dom';
+import { login } from "../userSlice";
+import { useDispatch } from "react-redux";
 
 export const Login = () => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [user, setUser] = useState({
     email: '',
@@ -46,7 +48,6 @@ export const Login = () => {
       if(user[test1] === ""){
         return;
       }
-
     }
 
     for(let test in userError){
@@ -58,7 +59,8 @@ export const Login = () => {
     logUser(user)
       .then(
         resultado => {
-          //si todo ha ido bien, redirigiremos a login...
+          dispatch(login({ credentials: resultado.data }))
+          console.log(resultado.data);
             navigate("/");          
         }
       )

@@ -15,3 +15,7 @@ export const registerUser = async (body) => {
 export const bringTattooArtists = async () => {
     return await axios.get(`https://localhost:4004/artist/all`);
 }
+
+export const bringTattoo = async () => {
+    return await axios.get(`http://localhost:4004/tattoo/all`);
+}
