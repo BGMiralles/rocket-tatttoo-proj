@@ -77,7 +77,7 @@ export const Login = () => {
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
-      <div className='errorMsg'>{userError.emailError}</div>
+      <div className={`errorMsgVoid ${userError.emailError !== "" ? 'errorMsg' : ''}`}>{userError.emailError}</div>
       <div className="header">Password</div>
       <CustomInput
         design={`inputDesign ${userError.passwordError !== "" ? 'inputDesignError' : ''}`}
@@ -88,7 +88,7 @@ export const Login = () => {
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
-      <div className='errorMsg'>{userError.passwordError}</div>
+      <div className={`errorMsgVoid ${userError.passwordError !== "" ? 'errorMsg' : ''}`}>{userError.passwordError}</div>
       <div className='buttonSubmit' onClick={LogMe}>Login</div>
     </div>
   );

@@ -13,6 +13,7 @@ export const validator = (type, value) => {
             }
 
         case 'name':
+        case 'username':
         case 'surname':
 
             if(value.length > 25){
@@ -22,6 +23,7 @@ export const validator = (type, value) => {
             }
 
         case 'phone':
+        case 'phone_number':
         case 'telefono':
 
             if (! /(?=.*?[0-9])/.test(value) ) {

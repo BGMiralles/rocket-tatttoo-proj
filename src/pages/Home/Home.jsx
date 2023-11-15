@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import { StaticNavbar } from "../../common/StaticNavbar/StaticNavbar";
 import { Banner } from "../../common/BannerHome/BannerHome";
 import { AboutUs } from "../../common/AboutUs/AboutUs";
 import { TattooStyles } from "../../common/TattooStyles/TattooStyles";
@@ -10,7 +9,6 @@ export const Home = () => {
 
   return (
     <div>
-    <div><StaticNavbar /></div>
     <div><Banner /></div>
     <div><AboutUs /></div>
     <div><TattooStyles /></div>

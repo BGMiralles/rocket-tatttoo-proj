@@ -1,7 +1,11 @@
 import React from 'react';
 import './About.css'
-export const About = () => {
+import { About } from '../../common/AboutText/AboutText';
+
+export const AboutView = () => {
      return (
-         <div className="profileDesign"></div>
+         <div>
+         <div><About /></div>
+         </div>
      )
 }

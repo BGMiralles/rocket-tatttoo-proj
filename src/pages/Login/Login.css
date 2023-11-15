@@ -35,6 +35,23 @@
   margin-top: 0.5em;
 }
 
+.errorMsg {
+  color: red;
+  border-radius: 0.5em;
+  border: 2px solid red;
+  padding: 2px;
+  background-color: white;
+  opacity: 70%;
+}
+
+.errorMsgVoid {
+  display: none;
+}
+
+.errorMsgVoid.errorMsg {
+  display: flex;
+}
+
 @-webkit-keyframes buttonLogin {
   from {
     -webkit-transform: scale(1);

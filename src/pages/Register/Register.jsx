@@ -45,18 +45,20 @@ export const Register = () => {
 
   const Submit = () => {
 
-    // for(let test1 in user){
-    //   if(user[test1] === ""){
-    //     return;
-    //   }
+    for(let test1 in user){
+      if(user[test1] === ""){
+        return;
+      }
 
-    // }
+    }
 
-    // for(let test in userError){
-    //   if(userError[test] !== ""){
-    //     return;
-    //   }
-    // }
+    for(let test in userError){
+      if(userError[test] !== ""){
+        return;
+      }
+    }
+
+    console.log('álskdfalmsdfmasldfmasdlfkm')
 
     registerUser(user)
       .then(
@@ -69,50 +71,50 @@ export const Register = () => {
 
   return (
     <div className="registerDesign">
-      <label className="labelRegister">Name</label>
+      <div className="header">Name</div>
       <CustomInput
         design={`inputDesign ${userError.usernameError !== "" ? 'inputDesignError' : ''}`}
         type={"text"}
         name={"username"}
-        placeholder={"Name"}
+        placeholder={""}
         // value={}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
-      <div className='errorMsg'>{userError.usernameError}</div>
-      <label className="labelRegister">Email</label>
+      <div className={`errorMsgVoid ${userError.usernameError !== "" ? 'errorMsg' : ''}`}>{userError.usernameError}</div>
+      <div className="header">Email</div>
       <CustomInput
         design={`inputDesign ${userError.emailError !== "" ? 'inputDesignError' : ''}`}
         type={"email"}
         name={"email"}
-        placeholder={"Email"}
+        placeholder={""}
         // value={}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
-      <div className='errorMsg'>{userError.emailError}</div>
-      <label className="labelRegister">Phone Number</label>
+      <div className={`errorMsgVoid ${userError.emailError !== "" ? 'errorMsg' : ''}`}>{userError.emailError}</div>
+      <div className="header">Phone Number</div>
       <CustomInput
         design={`inputDesign ${userError.phone_numberError !== "" ? 'inputDesignError' : ''}`}
         type={"text"}
         name={"phone_number"}
-        placeholder={"Phone Number"}
+        placeholder={""}
         // value={}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
-      <div className='errorMsg'>{userError.phone_numberError}</div>
-      <label className="labelRegister">Password</label>
+      <div className={`errorMsgVoid ${userError.phone_numberError !== "" ? 'errorMsg' : ''}`}>{userError.phone_numberError}</div>
+      <div className="header">Password</div>
       <CustomInput
         design={`inputDesign ${userError.passwordError !== "" ? 'inputDesignError' : ''}`}
         type={"password"}
         name={"password"}
-        placeholder={"Password"}
+        placeholder={""}
         // value={}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
-      <div className='errorMsg'>{userError.passwordError}</div>
+      <div className={`errorMsgVoid ${userError.passwordError !== "" ? 'errorMsg' : ''}`}>{userError.passwordError}</div>
       <div className='buttonSubmit' onClick={Submit}>Submit</div>
     </div>
   );
