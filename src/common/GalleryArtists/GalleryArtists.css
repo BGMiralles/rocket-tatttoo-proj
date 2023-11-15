@@ -1,0 +1,17 @@
+.gallery-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 7em;
+    background-color: black;
+  }
+
+.d-flex {
+    height: 100vh;
+    width: 100vw;
+    max-width: 2000px;
+    min-height: 900px;
+    background-color: black;
+  }

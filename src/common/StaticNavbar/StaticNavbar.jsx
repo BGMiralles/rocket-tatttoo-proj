@@ -27,6 +27,7 @@ export const StaticNavbar = () => {
           <Nav className="ms-auto navbar-links">
             <Nav.Link className='text-navbar items-navbar' href="/">HOME</Nav.Link>
             <Nav.Link className='text-navbar items-navbar' href="/gallery">GALLERY</Nav.Link>
+            <Nav.Link className='text-navbar items-navbar' href="/artists">ARTISTS</Nav.Link>
             <Nav.Link className='text-navbar items-navbar' href="/about">ABOUT US</Nav.Link>
             {!rdxCredentials?.credentials?.token ? (
               <>
