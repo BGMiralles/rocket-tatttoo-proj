@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./Profile.css";
-
 import { CustomInput } from "../../common/CustomInput/CustomInput";
 import { validator } from "../../services/useful";
 import { useNavigate } from 'react-router-dom';
-
-//Importo elementos para conexión a RDX en modo lectura
 import { useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { updateProfile } from "../../services/apiCalls";
 
 export const Profile = () => {
 
-  //Instancio navigate para poder navegar
   const navigate = useNavigate();
-
-  //Instancio a RDX en modo lectura
   const datosRdxUser = useSelector(userData);
 
-  //Variables de estado con hook useState en las que voy a guardar los valores de los input
   const [profile, setProfile] = useState({
     username: datosRdxUser.data.username,
     email: datosRdxUser.data.email,
@@ -32,8 +25,6 @@ export const Profile = () => {
   const [isEnabled, setIsEnabled] = useState(true);
 
   useEffect(() => {
-    //RDX se puede seguir como un hook de useState... por lo tanto seguimos
-
     if(!datosRdxUser.credentials){
       navigate("/")
     }
@@ -62,7 +53,9 @@ export const Profile = () => {
     updateProfile(profile, datosRdxUser.credentials)
       .then(
         resultado => {
-            setIsEnabled(true)          
+            setIsEnabled(true)
+            console.log(datosRdxUser.credentials);
+            console.log(resultado);          
         }
         )
         .catch(error => console.log(error));

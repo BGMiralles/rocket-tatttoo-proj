@@ -28,12 +28,17 @@ export const bringTattoo = async () => {
 }
 
 export const updateProfile = async (profile, credentials) => {
-    try {
       return await axios.put('http://localhost:4004/user/update', profile, {
-        headers: { Authorization: `Bearer ${credentials}` }
-      });
-    } catch (error) {
-      console.error('Error updating profile:', error);
-      throw error;
-    }
-  };
+        headers: { Authorization: `Bearer ${credentials}` }})
+      }
+
+export const myappointments = async (credentials) => {
+      return await axios.get('http://localhost:4004/user/myAppointments', {
+        headers: { Authorization: `Bearer ${credentials}` }})
+      }
+
+export const deletemyappointments = async (credentials) => {
+      return await axios.delete('http://localhost:4004/appointments/delete', {
+        headers: { Authorization: `Bearer ${credentials}` }})
+      }
+
