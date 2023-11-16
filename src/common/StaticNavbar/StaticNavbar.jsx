@@ -32,10 +32,12 @@ export const StaticNavbar = () => {
             {!rdxCredentials?.credentials ? (
               <>
                 <Nav.Link className='text-navbar items-navbar' href="/login">LOGIN</Nav.Link>
+                <Nav.Link className='text-navbar items-navbar' href="/workers">WORKERS</Nav.Link>
                 <Nav.Link className='text-navbar items-navbar' href="/register">REGISTER</Nav.Link>
               </>)
               : (
                 <>
+                <Nav.Link className='text-navbar items-navbar' href="/appointments">APPOINTMENTS</Nav.Link>
                 <Nav.Link className='text-navbar items-navbar' href="/profile">{rdxCredentials.data.username}</Nav.Link>
                 <div onClick={logOutMe}>
                 <Nav.Link className='text-navbar items-navbar' href="/">LOG OUT</Nav.Link>

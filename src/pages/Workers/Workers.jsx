@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import "./Register.css";
+import React, { useState, useEffect } from "react";
+import "./Workers.css";
 import { CustomInput } from "../../common/CustomInput/CustomInput";
 import { validator } from "../../services/useful";
-import { registerUser } from "../../services/apiCalls";
+import { logArtist } from "../../services/apiCalls";
 import { useNavigate } from 'react-router-dom';
+import { login } from "../userSlice";
+import { useDispatch } from "react-redux";
+import { jwtDecode } from "jwt-decode";
 
-export const Register = () => {
+export const LoginArtist = () => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [user, setUser] = useState({
-    username: '',
-    email: '',
-    phone_number: '',
-    password: '',
+    tattoo_artist: '',
+    password: ''
   })
 
   const [userError, setUserError] = useState({
-    usernameError: '',
-    emailError: '',
-    phone_numberError: '',
-    passwordError: '',
+    tattoo_artistError: '',
+    passwordError: ''
   })
 
 
@@ -43,13 +43,12 @@ export const Register = () => {
     }));
   }
 
-  const Submit = () => {
+  const LogMe = () => {
 
     for(let test1 in user){
       if(user[test1] === ""){
         return;
       }
-
     }
 
     for(let test in userError){
@@ -58,53 +57,32 @@ export const Register = () => {
       }
     }
 
-    registerUser(user)
+    logArtist(user)
       .then(
         resultado => {
-            navigate("/login");          
+          const tokenDecoded = jwtDecode(resultado)
+          dispatch(login({ credentials: resultado, data: tokenDecoded }))
+          console.log(resultado, tokenDecoded);
+            navigate("/");          
         }
       )
       .catch(error=> console.log(error));
   }
 
   return (
-    <div className="registerDesign">
-      <div className="header">Name</div>
+    <div className="loginDesign">
+      <div className="header">Tattoo Artist</div>
       <CustomInput
         disabled={false}
-        design={`inputDesign ${userError.usernameError !== "" ? 'inputDesignError' : ''}`}
+        design={`inputDesign ${userError.tattoo_artistError !== "" ? 'inputDesignError' : ''}`}
         type={"text"}
-        name={"username"}
-        placeholder={""}
-        value={""}
-        functionProp={functionHandler}
-        functionBlur={errorCheck}
-      />
-      <div className={`errorMsgVoid ${userError.usernameError !== "" ? 'errorMsg' : ''}`}>{userError.usernameError}</div>
-      <div className="header">Email</div>
-      <CustomInput
-        disabled={false}
-        design={`inputDesign ${userError.emailError !== "" ? 'inputDesignError' : ''}`}
-        type={"email"}
-        name={"email"}
+        name={"tattoo_artist"}
         placeholder={""}
         value={""}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
       <div className={`errorMsgVoid ${userError.emailError !== "" ? 'errorMsg' : ''}`}>{userError.emailError}</div>
-      <div className="header">Phone Number</div>
-      <CustomInput
-        disabled={false}
-        design={`inputDesign ${userError.phone_numberError !== "" ? 'inputDesignError' : ''}`}
-        type={"text"}
-        name={"phone_number"}
-        placeholder={""}
-        value={""}
-        functionProp={functionHandler}
-        functionBlur={errorCheck}
-      />
-      <div className={`errorMsgVoid ${userError.phone_numberError !== "" ? 'errorMsg' : ''}`}>{userError.phone_numberError}</div>
       <div className="header">Password</div>
       <CustomInput
         disabled={false}
@@ -117,7 +95,7 @@ export const Register = () => {
         functionBlur={errorCheck}
       />
       <div className={`errorMsgVoid ${userError.passwordError !== "" ? 'errorMsg' : ''}`}>{userError.passwordError}</div>
-      <div className='buttonSubmit' onClick={Submit}>Submit</div>
+      <div className='buttonSubmit' onClick={LogMe}>Login</div>
     </div>
   );
 };

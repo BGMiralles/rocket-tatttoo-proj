@@ -73,22 +73,24 @@ export const Login = () => {
     <div className="loginDesign">
       <div className="header">Email</div>
       <CustomInput
+        disabled={false}
         design={`inputDesign ${userError.emailError !== "" ? 'inputDesignError' : ''}`}
         type={"email"}
         name={"email"}
         placeholder={""}
-        // value={}
+        value={""}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />
       <div className={`errorMsgVoid ${userError.emailError !== "" ? 'errorMsg' : ''}`}>{userError.emailError}</div>
       <div className="header">Password</div>
       <CustomInput
+        disabled={false}
         design={`inputDesign ${userError.passwordError !== "" ? 'inputDesignError' : ''}`}
         type={"password"}
         name={"password"}
         placeholder={""}
-        // value={}
+        value={""}
         functionProp={functionHandler}
         functionBlur={errorCheck}
       />

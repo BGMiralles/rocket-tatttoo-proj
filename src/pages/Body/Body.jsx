@@ -6,12 +6,13 @@ import { Profile } from '../Profile/Profile';
 import { AboutView } from "../About/About";
 import { Gallery } from '../Gallery/Gallery';
 import { Artists } from '../Artists/Artists';
+import { LoginArtist } from '../Workers/Workers';
 
 export const Body = () => {
      return (
          <>
             <Routes>
-                {/* <Route path={'*'} element={<Navigate to="/" />}/> */}
+                <Route path={'*'} element={<Navigate to="/" />}/>
                 <Route path="/" element={<Home />}/>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/register" element={<Register />}/>
@@ -19,6 +20,7 @@ export const Body = () => {
                 <Route path="/about" element={<AboutView />}/>
                 <Route path="/gallery" element={<Gallery />}/>
                 <Route path="/artists" element={<Artists />}/>
+                <Route path="/workers" element={<LoginArtist />}/>
             </Routes>
          </>
      )
