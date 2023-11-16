@@ -29,16 +29,16 @@ export const StaticNavbar = () => {
             <Nav.Link className='text-navbar items-navbar' href="/gallery">GALLERY</Nav.Link>
             <Nav.Link className='text-navbar items-navbar' href="/artists">ARTISTS</Nav.Link>
             <Nav.Link className='text-navbar items-navbar' href="/about">ABOUT US</Nav.Link>
-            {!rdxCredentials?.credentials?.token ? (
+            {!rdxCredentials?.credentials ? (
               <>
                 <Nav.Link className='text-navbar items-navbar' href="/login">LOGIN</Nav.Link>
                 <Nav.Link className='text-navbar items-navbar' href="/register">REGISTER</Nav.Link>
               </>)
               : (
                 <>
-                <LinkButton path={"/profile"} title={rdxCredentials.credentials.firstName} />
+                <Nav.Link className='text-navbar items-navbar' href="/profile">{rdxCredentials.data.username}</Nav.Link>
                 <div onClick={logOutMe}>
-                <LinkButton path={"/"} title={"LOG OUT"} />  
+                <Nav.Link className='text-navbar items-navbar' href="/">LOG OUT</Nav.Link>
                 </div>
               </>)}
           </Nav>

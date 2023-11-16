@@ -6,6 +6,7 @@ import { logUser } from "../../services/apiCalls";
 import { useNavigate } from 'react-router-dom';
 import { login } from "../userSlice";
 import { useDispatch } from "react-redux";
+import { jwtDecode } from "jwt-decode";
 
 export const Login = () => {
 
@@ -59,8 +60,9 @@ export const Login = () => {
     logUser(user)
       .then(
         resultado => {
-          dispatch(login({ credentials: resultado.data }))
-          console.log(resultado.data);
+          const tokenDecoded = jwtDecode(resultado)
+          dispatch(login({ credentials: resultado, data: tokenDecoded }))
+          console.log(resultado, tokenDecoded);
             navigate("/");          
         }
       )

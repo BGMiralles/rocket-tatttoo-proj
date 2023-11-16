@@ -1,4 +1,4 @@
-.gallery-container {
+.gallery-container1 {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -8,7 +8,7 @@
     background-color: black;
   }
 
-.d-flex {
+#artists {
     height: 100vh;
     width: 100vw;
     max-width: 2000px;

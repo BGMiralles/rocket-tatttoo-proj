@@ -3,8 +3,11 @@
 .aboutDesign {
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
-  background-color: black;
+  overflow-x: hidden;
+  /* background-color: black; */
+  background-image: url("../../img/about.jpg");
+  background-size: cover;
+  
 }
 
 .aboutDiv {
@@ -14,7 +17,7 @@
   max-width: 100vw;
   height: 30em;
   margin-top: 7em;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .aboutLogo {
@@ -71,6 +74,10 @@
   background-color: transparent;
   font-size: 20px;
   overflow: hidden;
+}
+
+#head {
+  font-size: 2em;
 }
 
 .appointmentAbout:hover {

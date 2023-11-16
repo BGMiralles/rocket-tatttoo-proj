@@ -24,7 +24,6 @@
     filter: drop-shadow(0 1px 1px gold);
     overflow: hidden;
     margin-right: 10em;
-    /* color: ; */
   }
 
   @media screen and (max-width: 768px) {
