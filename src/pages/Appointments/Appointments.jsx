@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { myappointments } from "../../services/apiCalls";
+import { myappointments, deletemyappointments } from "../../services/apiCalls";
 import { useNavigate } from "react-router-dom";
 import { Print } from "../../common/AppointmentTable/AppointmentTable";
 import { userData } from "../userSlice";
@@ -39,7 +39,7 @@ export const Appointment = () => {
   return (
     <div>
       <h2>Tabla de Citas</h2>
-      <Print appo={appointments} />
+      <Print appo={appointments} setAppointments={setAppointments} />
     </div>
   );
 };

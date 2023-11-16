@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { deletemyappointments, myappointments } from "../../services/apiCalls"; 
+import { deletemyappointments, myappointments } from "../../services/apiCalls";
 import { userData } from "../../pages/userSlice";
 
-export const Print = ({ appo }) => {
+export const Print = ({ appo, setAppointments }) => {
   const headers = [
     "User Name",
     "Tattoo Artist Name",
@@ -31,7 +31,7 @@ export const Print = ({ appo }) => {
 
   const datosRdxUser = useSelector(userData);
   const [updatedAppointments, setUpdatedAppointments] = useState([]);
-  
+
   const fetchData = async () => {
     try {
       const response = await myappointments(datosRdxUser.credentials);
@@ -41,14 +41,16 @@ export const Print = ({ appo }) => {
     }
   };
 
-  const handleDelete = (appointmentId) => {
-    deletemyappointments(datosRdxUser.credentials)
-      .then(() => {
-        fetchData();
-      })
-      .catch((error) => {
-        console.error("Error al eliminar la cita:", error);
-      });
+  const handleDelete = async (appointmentId) => {
+    try {
+      await deletemyappointments(datosRdxUser.credentials);
+      const updatedAppointments = appo.filter(
+        (user) => user.id !== appointmentId
+      );
+      setAppointments(updatedAppointments);
+    } catch (error) {
+      console.error("Error al eliminar la cita:", error);
+    }
   };
 
   return (
@@ -73,9 +75,7 @@ export const Print = ({ appo }) => {
               <td>{formatDate(user.date)}</td>
               <td>{user.status}</td>
               <td>
-                <button onClick={() => handleDelete(user.id)}>
-                  Eliminar
-                </button>
+                <button onClick={() => handleDelete(user.id)}>Eliminar</button>
               </td>
             </tr>
           ))}
