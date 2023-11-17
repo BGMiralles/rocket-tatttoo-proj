@@ -132,35 +132,42 @@ export const Print = ({ appo, setAppointments }) => {
 
   const handleSaveEdit = async (appointmentId) => {
     try {
-      // Buscar el ID correspondiente al artista tatuador seleccionado en editedValues.tattoo_artist_name
       const selectedArtist = tattooArtists.find(
         (artist) => artist.tattoo_artist === editedValues.tattoo_artist_name
       );
       const artistId = selectedArtist ? selectedArtist.id : null;
-
-      // Buscar el ID correspondiente al tatuaje seleccionado en editedValues.name
+  
       const selectedTattoo = tattoos.find(
         (tattoo) => tattoo.name === editedValues.name
       );
       const tattooId = selectedTattoo ? selectedTattoo.id : null;
-
+  
       const editedValuesWithId = {
-        ...editedValues,
+        user_name: editedValues.user_name,
         tattoo_artist_id: artistId,
-        // Usar el ID del tatuaje seleccionado
-        tattoo_id: tattooId,
+        work: editedValues.work,
+        name: editedValues.name,
+        description: editedValues.description,
+        price: editedValues.price,
+        date: editedValues.date,
+        status: editedValues.status,
       };
-
+  
+      // Incluir tattoo_id solo si ha sido modificado
+      if (tattooId !== null) {
+        editedValuesWithId.tattoo_id = tattooId;
+      }
+  
       await updateAppointment(
         appointmentId,
         editedValuesWithId,
         datosRdxUser.credentials
       );
-
+  
       const updatedAppointments = appo.map((user) =>
         user.id === appointmentId ? { ...user, ...editedValues } : user
       );
-
+  
       setAppointments(updatedAppointments);
       setEditingId(null);
       setEditedValues({});
@@ -168,6 +175,7 @@ export const Print = ({ appo, setAppointments }) => {
       console.error("Error al guardar la edición:", error);
     }
   };
+  
 
   return (
     <table>
