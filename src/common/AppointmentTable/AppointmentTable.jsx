@@ -144,7 +144,6 @@ export const Print = ({ appo, setAppointments }) => {
   
       const editedValuesWithId = {
         user_name: editedValues.user_name,
-        tattoo_artist_id: artistId,
         work: editedValues.work,
         name: editedValues.name,
         description: editedValues.description,
@@ -156,6 +155,11 @@ export const Print = ({ appo, setAppointments }) => {
       // Incluir tattoo_id solo si ha sido modificado
       if (tattooId !== null) {
         editedValuesWithId.tattoo_id = tattooId;
+      }
+  
+      // Incluir artistId solo si ha sido modificado
+      if (artistId !== null) {
+        editedValuesWithId.tattoo_artist_id = artistId;
       }
   
       await updateAppointment(
@@ -175,6 +179,7 @@ export const Print = ({ appo, setAppointments }) => {
       console.error("Error al guardar la edición:", error);
     }
   };
+  
   
 
   return (
