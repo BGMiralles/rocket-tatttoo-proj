@@ -55,7 +55,7 @@ export const Profile = () => {
         resultado => {
             setIsEnabled(true)
             console.log(datosRdxUser.credentials);
-            console.log(resultado);          
+             console.log(resultado);          
         }
         )
         .catch(error => console.log(error));
