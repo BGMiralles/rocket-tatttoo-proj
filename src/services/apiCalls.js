@@ -17,6 +17,13 @@ export const registerUser = async (body) => {
   return await axios.post(`http://localhost:4004/user/register`, body);
 };
 
+export const newAppointment = async (body, credentials) => {
+  console.log(body);
+  return await axios.post(`http://localhost:4004/appointments/create`, body, {
+    headers: { Authorization: `Bearer ${credentials}` },
+  });
+};
+
 export const bringTattooArtists = async () => {
   return await axios.get(`http://localhost:4004/artist/all`);
 };
