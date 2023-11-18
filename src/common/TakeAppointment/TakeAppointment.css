@@ -1,40 +1,184 @@
 .newAppointmentDesign {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3em;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+
+  background-image: url(../../img/new_appointment.jpg);
+  background-size: cover;
+}
+
+.errorMsg {
+  color: red;
+  border-radius: 0.5em;
+  border: 2px solid red;
+  padding: 2px;
+  background-color: white;
+  opacity: 70%;
+  margin-top: 0.5em;
+}
+
+.buttonSend {
+  height: 3em;
+  width: 8em;
+  font-size: 1.5em;
+
+  border-radius: 1em;
+  background-color: #5086c1;
+  color: white;
+  font-weight: bolder;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+  cursor: pointer;
+}
+
+.buttonSend:hover {
+  transition: 0.4s;
+  background-color: #f47e8e;
+}
+
+.inputDesignError {
+  border: 2px solid red;
+}
+
+.inputDesign1 {
+  margin-top: 1em;
+  height: 2.5em;
+  width: 15em;
+  border: 2px solid #5086c1;
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding-left: 0.5em;
+}
+
+.inputDesignError1 {
+  border: 2px solid red;
+}
+
+/* Estilo para el dropdown */
+.selectDesign {
+  margin-top: 1em;
+  height: 2.5em;
+  width: 15em;
+  border: 2px solid #5086c1;
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding-left: 0.5em;
+}
+
+.selectDesignError {
+  border: 2px solid red;
+}
+
+/* Estilo para los días del calendario */
+.react-datepicker__day {
+  color: #5086c1;
+}
+
+/* Estilo para la flecha del calendario */
+.react-datepicker__navigation--next {
+  border-left-color: #5086c1;
+}
+
+/* Estilo para el contenedor del calendario */
+.react-datepicker__header {
+  background-color: #5086c1;
+  color: white;
+}
+
+/* Estilo para los días de la semana del calendario */
+.react-datepicker__day-name {
+  color: #5086c1;
+}
+
+/* Estilo para los días seleccionados del calendario */
+.react-datepicker__day--selected {
+  background-color: #5086c1;
+  color: white;
+}
+
+@-webkit-keyframes buttonSend {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
-  
-  .inputDesign1 {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
-  
-  .inputDesignError1 {
-    border-color: #ff0000;
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
-  
-  .errorMsg {
-    color: #ff0000;
-    font-size: 14px;
-    margin-top: 5px;
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
-  
-  .buttonSend {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 15px;
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
-  
- 
+}
+
+@keyframes buttonSend {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.buttonSend:hover {
+  transition: 0.4s;
+  background-color: #f47e8e;
+  cursor: pointer;
+  -webkit-animation: buttonSubmit 1.5s ease-in-out infinite both;
+  animation: buttonSubmit 1.5s ease-in-out infinite both;
+}

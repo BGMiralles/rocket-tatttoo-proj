@@ -50,13 +50,19 @@ export const updateAppointment = async (appointmentId, editedValues, credentials
       return response.data;
     } catch (error) {
       console.error('Error in updateAppointment:', error);
-      throw error; // Re-lanza el error para que pueda ser manejado en el componente
+      throw error;
     }
   };
   
 
 export const myappointments = async (credentials) => {
   return await axios.get("http://localhost:4004/user/myAppointments", {
+    headers: { Authorization: `Bearer ${credentials}` },
+  });
+};
+
+export const artistappointments = async (credentials) => {
+  return await axios.get("http://localhost:4004/artist/myAppointments", {
     headers: { Authorization: `Bearer ${credentials}` },
   });
 };
