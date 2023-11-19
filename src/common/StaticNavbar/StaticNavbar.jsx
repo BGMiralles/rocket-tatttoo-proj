@@ -42,7 +42,7 @@ export const StaticNavbar = () => {
               ABOUT US
             </Nav.Link>
             {rdxCredentials?.credentials ? (
-              rdxCredentials.data.role === "admin" ? (
+              rdxCredentials.data.role === "admin" || "super_admin" ? (
                 <>
                   <Nav.Link
                     className="text-navbar items-navbar"

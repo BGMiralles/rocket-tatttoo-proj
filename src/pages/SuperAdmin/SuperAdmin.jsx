@@ -1,11 +1,11 @@
 import React from "react";
 import "./SuperAdmin.css";
-import { Banner } from "../../common/BannerHome/BannerHome";
+import { Dashboard } from "../../common/AllSuperAdmin/AllSuperAdmin";
 
 
 export const SuperAdmin = () => {
 
   return (
-    <Banner />    
+    <Dashboard />    
   );
 };
