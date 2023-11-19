@@ -61,6 +61,18 @@ export const myappointments = async (credentials) => {
   });
 };
 
+export const superadminappointments = async (credentials) => {
+  return await axios.get("http://localhost:4004/appointments/getall", {
+    headers: { Authorization: `Bearer ${credentials}` },
+  });
+};
+
+export const superadminallusers = async (credentials) => {
+  return await axios.get("http://localhost:4004/user/all", {
+    headers: { Authorization: `Bearer ${credentials}` },
+  });
+};
+
 export const artistappointments = async (credentials) => {
   return await axios.get("http://localhost:4004/artist/myAppointments", {
     headers: { Authorization: `Bearer ${credentials}` },
@@ -70,5 +82,12 @@ export const artistappointments = async (credentials) => {
 export const deletemyappointments = async (credentials) => {
   return await axios.delete("http://localhost:4004/appointments/delete", {
     headers: { Authorization: `Bearer ${credentials}` },
+  });
+};
+
+export const deletemyappointmentsArtist = async (appointmentId, editedValues, credentials) => {
+  return await axios.delete("http://localhost:4004/appointments/delete", 
+  { id: appointmentId, ...editedValues },
+  {headers: { Authorization: `Bearer ${credentials}` },
   });
 };

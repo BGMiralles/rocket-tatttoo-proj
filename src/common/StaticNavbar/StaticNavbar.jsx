@@ -46,6 +46,12 @@ export const StaticNavbar = () => {
                 <>
                   <Nav.Link
                     className="text-navbar items-navbar"
+                    href="/superadmin"
+                  >
+                    SUPER ADMIN
+                  </Nav.Link>
+                  <Nav.Link
+                    className="text-navbar items-navbar"
                     href="/myappointments"
                   >
                     {rdxCredentials.data.name}

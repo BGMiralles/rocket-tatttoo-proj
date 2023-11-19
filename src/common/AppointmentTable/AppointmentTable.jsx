@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./AppointmentTable.css"
+import "./AppointmentTable.css";
 import { useSelector } from "react-redux";
 import {
   deletemyappointments,
@@ -41,7 +41,7 @@ export const Print = ({ appo, setAppointments }) => {
   const navigate = useNavigate();
   const [updatedAppointments, setUpdatedAppointments] = useState([]);
   const [editingId, setEditingId] = useState(null);
-  const [editedValues, setEditedValues] = useState([]);
+  const [editedValues, setEditedValues] = useState({});
   const [tattooArtists, setTattooArtists] = useState([]);
   const [dropdownOptions, setDropdownOptions] = useState([]);
   const [tattoos, setTattoos] = useState([]);
@@ -135,34 +135,23 @@ export const Print = ({ appo, setAppointments }) => {
 
   const handleSaveEdit = async (appointmentId) => {
     try {
-      const selectedArtist = tattooArtists.find(
-        (artist) => artist.tattoo_artist === editedValues.tattoo_artist_name
-      );
-      const artistId = selectedArtist ? selectedArtist.id : null;
-
       const selectedTattoo = tattoos.find(
-        (tattoo) => tattoo.name === editedValues.name
+        (tattoo) => tattoo.name === editedValues.tattoo
       );
       const tattooId = selectedTattoo ? selectedTattoo.id : null;
 
       const editedValuesWithId = {
         user_name: editedValues.user_name,
+        phone_number: editedValues.phone_number,
         work: editedValues.work,
-        name: editedValues.name,
-        description: editedValues.description,
+        tattoo_id: tattooId,
         price: editedValues.price,
         date: editedValues.date,
         status: editedValues.status,
       };
 
-      // Incluir tattoo_id solo si ha sido modificado
       if (tattooId !== null) {
         editedValuesWithId.tattoo_id = tattooId;
-      }
-
-      // Incluir artistId solo si ha sido modificado
-      if (artistId !== null) {
-        editedValuesWithId.tattoo_artist_id = artistId;
       }
 
       await updateAppointment(
@@ -171,13 +160,17 @@ export const Print = ({ appo, setAppointments }) => {
         datosRdxUser.credentials
       );
 
-      const updatedAppointments = appo.map((user) =>
-        user.id === appointmentId ? { ...user, ...editedValues } : user
-      );
+      if (Array.isArray(appo)) {
+        const updatedAppointments = appo.map((user) =>
+          user.id === appointmentId ? { ...user, ...editedValues } : user
+        );
 
-      setAppointments(updatedAppointments);
-      setEditingId(null);
-      setEditedValues({});
+        setAppointments(updatedAppointments);
+        setEditingId(null);
+        setEditedValues({});
+      } else {
+        console.error("Error: appo no es un array");
+      }
     } catch (error) {
       console.error("Error al guardar la edición:", error);
     }
@@ -212,7 +205,7 @@ export const Print = ({ appo, setAppointments }) => {
                           user_name: e.target.value,
                         })
                       }
-                      disabled // Campo de solo lectura en modo de edición
+                      disabled
                     />
                   ) : (
                     user.user_name
@@ -248,7 +241,7 @@ export const Print = ({ appo, setAppointments }) => {
                           work: e.target.value,
                         })
                       }
-                      disabled // Campo de solo lectura en modo de edición
+                      disabled
                     />
                   ) : (
                     user.work
@@ -342,22 +335,35 @@ export const Print = ({ appo, setAppointments }) => {
                 <td>
                   {user.id === editingId ? (
                     <>
-                      <button className="save" onClick={() => handleSaveEdit(user.id)}>
+                      <button
+                        className="save"
+                        onClick={() => handleSaveEdit(user.id)}
+                      >
                         Save
                       </button>
-                      <button className="delete" onClick={() => handleDelete(user.id)}>
+                      <button
+                        className="delete"
+                        onClick={() => handleDelete(user.id)}
+                      >
                         Delete
                       </button>
                     </>
                   ) : (
-                    <button className="edit " onClick={() => handleEdit(user.id)}>EDIT</button>
+                    <button
+                      className="edit "
+                      onClick={() => handleEdit(user.id)}
+                    >
+                      EDIT
+                    </button>
                   )}
                 </td>
               </tr>
             ))}
         </tbody>
       </table>
-      <div className='buttonSubmit' onClick={handleNewAppointmentClick}>New Appointment</div>
+      <div className="buttonSubmit" onClick={handleNewAppointmentClick}>
+        New Appointment
+      </div>
     </div>
   );
 };
