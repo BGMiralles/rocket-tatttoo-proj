@@ -45,6 +45,17 @@ Desarrollada como formacion del Bootcamp de Full Stack Developer de Geekshubs Ac
   ​
   ​
 
+### Instrucciones
+1. Clona este repositorio en tu máquina local usando el siguiente comando: `git clone [URL del repositorio]`.
+
+2. Clona el repositorio del proyecto 4, estudio de tatuajes backend, en tu máquina local usando el siguiente comando: `git clone [URL del repositorio]`.
+
+3. Ejecuta el comando `npm run dev` en la consola del proyecto 4, estudio de tatuajes backend, para levantar el servidor backend.
+
+4. Ejecuta el comando `npm run dev` en la consola de este proyecto para levantar el servidor frontend.
+
+5. Disfruta de una página web completamente funcional, registrate, crea citas y explora el rico mundo del arte de los tatuajes.
+
 ### Descripción
 
 ​
