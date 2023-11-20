@@ -135,24 +135,31 @@ export const Print = ({ appo, setAppointments }) => {
 
   const handleSaveEdit = async (appointmentId) => {
     try {
+      const selectedTattooArtist = tattooArtists.find(
+        (artist) => artist.tattoo_artist === editedValues.tattoo_artist_name
+      );
+      const tattooArtistId = selectedTattooArtist
+        ? selectedTattooArtist.id
+        : null;
+
       const selectedTattoo = tattoos.find(
-        (tattoo) => tattoo.name === editedValues.tattoo
+        (tattoo) => tattoo.name === editedValues.name
       );
       const tattooId = selectedTattoo ? selectedTattoo.id : null;
 
-      const editedValuesWithId = {
-        user_name: editedValues.user_name,
-        phone_number: editedValues.phone_number,
-        work: editedValues.work,
-        tattoo_id: tattooId,
-        price: editedValues.price,
-        date: editedValues.date,
-        status: editedValues.status,
-      };
-
-      if (tattooId !== null) {
-        editedValuesWithId.tattoo_id = tattooId;
-      }
+      // Filtrar los valores editados que no son undefined o null
+      const editedValuesWithId = Object.fromEntries(
+        Object.entries({
+          user_name: editedValues.user_name,
+          tattoo_artist_id: tattooArtistId,
+          work: editedValues.work,
+          tattoo_id: tattooId,
+          description: editedValues.description,
+          price: editedValues.price,
+          date: editedValues.date,
+          status: editedValues.status,
+        }).filter(([key, value]) => value !== undefined && value !== null)
+      );
 
       await updateAppointment(
         appointmentId,
