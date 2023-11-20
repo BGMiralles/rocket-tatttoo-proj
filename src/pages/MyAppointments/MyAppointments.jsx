@@ -16,7 +16,7 @@ export const MyAppointments = () => {
   const [isMounted, setIsMounted] = useState(true);
 
   useEffect(() => {
-    if (!datosRdxUser.credentials) {
+    if (!datosRdxUser.credentials || (datosRdxUser.data.role !== "admin" && datosRdxUser.data.role !== "super_admin")) {
       navigate("/");
     } else {
       const fetchData = async () => {

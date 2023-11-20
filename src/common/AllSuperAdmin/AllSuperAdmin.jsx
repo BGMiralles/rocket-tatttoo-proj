@@ -12,11 +12,16 @@ export const Dashboard = () => {
   const datosRdxUser = useSelector(userData);
 
   useEffect(() => {
+    if(!datosRdxUser.credentials){
+      navigate("/")
+    }
+  }, [datosRdxUser]);
+
+  useEffect(() => {
     const fetchUsers = async () => {
       try {
         const usersResponse = await superadminallusers(datosRdxUser.credentials);
         setUsers(usersResponse.data.data);
-        console.log(usersResponse.data.data);
       } catch (error) {
         console.error("Error fetching users:", error);
       }
