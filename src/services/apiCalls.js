@@ -62,7 +62,7 @@ export const myappointments = async (credentials) => {
 };
 
 export const superadminappointments = async (credentials) => {
-  return await axios.get("http://localhost:4004/appointments/getall", {
+  return await axios.get("http://localhost:4004/user/allAppointments", {
     headers: { Authorization: `Bearer ${credentials}` },
   });
 };

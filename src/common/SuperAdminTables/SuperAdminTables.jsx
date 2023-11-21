@@ -49,9 +49,9 @@ export const AppointmentTable = ({ appointments }) => {
           <tbody>
             {appointments.map((appointment) => (
               <tr key={appointment.id}>
-                <td>{appointment.user_id}</td>
-                <td>{appointment.tattoo_artist_id}</td>
-                <td>{appointment.tattoo_id}</td>
+                <td>{appointment.user_name}</td>
+                <td>{appointment.tattoo_artist_name}</td>
+                <td>{appointment.name}</td>
                 <td>{appointment.date}</td>
                 <td>{appointment.status}</td>
               </tr>
