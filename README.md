@@ -90,81 +90,81 @@ Conexion a Redes sociales.
 Vista principal del estudio
 Aqui puedes ver toda la pagina en general, con sus diferentes secciones
 
-<img src = "./src/img/home1.jpg" width = "600px" alt ="Home">
-<img src = "./src/img/home2.jpg" width = "600px" alt ="Home">
-<img src = "./src/img/home3.jpg" width = "600px" alt ="Home">
+<img src = "./src/img/home1.JPG" width = "600px" alt ="Home">
+<img src = "./src/img/home2.JPG" width = "600px" alt ="Home">
+<img src = "./src/img/home3.JPG" width = "600px" alt ="Home">
 
 ###### About US
 
-<img src = "./src/img/aboutus1.jpg" width = "600px" alt ="About Us">
-<img src = "./src/img/aboutus2.jpg" width = "600px" alt ="About Us">
+<img src = "./src/img/aboutus1.JPG" width = "600px" alt ="About Us">
+<img src = "./src/img/aboutus2.JPG" width = "600px" alt ="About Us">
 
 ###### Artists
 
 Vista de los tatuadores, con una breve descripcion, un bonito hover y si haces click en ellos se abre su presentacion.
 
-<img src = "./src/img/artists1.jpg" width = "600px" alt ="Artists">
+<img src = "./src/img/artists1.JPG" width = "600px" alt ="Artists">
 
 ###### Gallery
 
 Galeria de tattoos
 
-<img src = "./src/img/gallery1.jpg" width = "600px" alt ="Gallery">
-<img src = "./src/img/gallery2.jpg" width = "600px" alt ="Gallery">
+<img src = "./src/img/gallery1.JPG" width = "600px" alt ="Gallery">
+<img src = "./src/img/gallery2.JPG" width = "600px" alt ="Gallery">
 
 ###### Login
 
 Vista del Login
 
-<img src = "./src/img/login1.jpg" width = "600px" alt ="Login">
+<img src = "./src/img/login1.JPG" width = "600px" alt ="Login">
 
 ###### Workers
 
 Vista de Workers
 
-<img src = "./src/img/workers1.jpg" width = "600px" alt ="Workers">
+<img src = "./src/img/workers1.JPG" width = "600px" alt ="Workers">
 
 ###### Register
 
 Vista del Register
 
-<img src = "./src/img/register1.jpg" width = "600px" alt ="Register">
+<img src = "./src/img/register1.JPG" width = "600px" alt ="Register">
 
 ###### Panel de usuario
 
 Vista del panel de usuario
 
-<img src = "./src/img/user1.jpg" width = "600px" alt ="User">
+<img src = "./src/img/user1.JPG" width = "600px" alt ="User">
 
 Vista pestaña Appointments
-<img src = "./src/img/user2.jpg" width = "600px" alt ="Appointments">
+<img src = "./src/img/user2.JPG" width = "600px" alt ="Appointments">
 
 Vista de edicion dentro de Appointments
-<img src = "./src/img/user3.jpg" width = "600px" alt ="Edit">
+<img src = "./src/img/user3.JPG" width = "600px" alt ="Edit">
 
 Vista New Appointment
-<img src = "./src/img/user4.jpg" width = "600px" alt ="New Appointment">
+<img src = "./src/img/user4.JPG" width = "600px" alt ="New Appointment">
 
 Vista Perfil
-<img src = "./src/img/user5.jpg" width = "600px" alt ="Profile">
+<img src = "./src/img/user5.JPG" width = "600px" alt ="Profile">
 
 ###### Panel de admin
 
 Vista del panel de admin
 
-<img src = "./src/img/admin1.jpg" width = "600px" alt ="Vista principal Admin">
+<img src = "./src/img/admin1.JPG" width = "600px" alt ="Vista principal Admin">
 
 Vista Profile de Admin
-<img src = "./src/img/admin2.jpg" width = "600px" alt ="Profile">
+<img src = "./src/img/admin2.JPG" width = "600px" alt ="Profile">
 
 Vista Edit Appointments Profile
-<img src = "./src/img/admin3.jpg" width = "600px" alt ="Edit">
+<img src = "./src/img/admin3.JPG" width = "600px" alt ="Edit">
 
 ###### Info a pie de pagina
 
 Dirrecion del estudio, redes sociales y horarios.
 
-<img src = "./src/img/footer1.jpg" width = "600px" alt ="Foto de la vista principal">
+<img src = "./src/img/footer1.JPG" width = "600px" alt ="Foto de la vista principal">
 
 ### Observaciones
 
