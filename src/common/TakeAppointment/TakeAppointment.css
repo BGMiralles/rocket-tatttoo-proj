@@ -63,7 +63,6 @@
   border: 2px solid red;
 }
 
-/* Estilo para el dropdown */
 .selectDesign {
   margin-top: 1em;
   height: 2.5em;
@@ -78,28 +77,23 @@
   border: 2px solid red;
 }
 
-/* Estilo para los días del calendario */
 .react-datepicker__day {
   color: #5086c1;
 }
 
-/* Estilo para la flecha del calendario */
 .react-datepicker__navigation--next {
   border-left-color: #5086c1;
 }
 
-/* Estilo para el contenedor del calendario */
 .react-datepicker__header {
   background-color: #5086c1;
   color: white;
 }
 
-/* Estilo para los días de la semana del calendario */
 .react-datepicker__day-name {
   color: #5086c1;
 }
 
-/* Estilo para los días seleccionados del calendario */
 .react-datepicker__day--selected {
   background-color: #5086c1;
   color: white;

@@ -6,13 +6,12 @@ import { TattooStyles } from "../../common/TattooStyles/TattooStyles";
 import { Information } from "../../common/Information/Information";
 
 export const Home = () => {
-
   return (
     <div>
-    <Banner />
-    <AboutUs />
-    <TattooStyles />
-    <Information />
+      <Banner />
+      <AboutUs />
+      <TattooStyles />
+      <Information />
     </div>
   );
 };

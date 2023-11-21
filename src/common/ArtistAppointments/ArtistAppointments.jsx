@@ -93,7 +93,7 @@ export const Works = ({ appo, setAppointments }) => {
 
   const handleDelete = async (appointmentId) => {
     try {
-      await deletemyappointmentsArtist(appointmentId, datosRdxUser.credentials); // Asegúrate de enviar el appointmentId
+      await deletemyappointmentsArtist(appointmentId, datosRdxUser.credentials);
       const updatedAppointments = appo.filter(
         (user) => user.id !== appointmentId
       );
@@ -118,7 +118,6 @@ export const Works = ({ appo, setAppointments }) => {
       );
       const tattooId = selectedTattoo ? selectedTattoo.id : null;
 
-      // Formatear la fecha en YYYY-MM-DD HH:MM:SS
       const formattedDate = new Date()
         .toISOString()
         .slice(0, 19)

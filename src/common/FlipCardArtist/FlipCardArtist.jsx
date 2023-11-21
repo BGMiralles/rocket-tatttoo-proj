@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './FlipCardArtist.css';
+import React, { useState } from "react";
+import "./FlipCardArtist.css";
 
 export const FlipCardArtist = ({ tattoo_artist, description, photo }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -9,7 +9,10 @@ export const FlipCardArtist = ({ tattoo_artist, description, photo }) => {
   };
 
   return (
-    <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
+    <div
+      className={`flip-card ${isFlipped ? "flipped" : ""}`}
+      onClick={handleFlip}
+    >
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img src={photo} alt={tattoo_artist} />

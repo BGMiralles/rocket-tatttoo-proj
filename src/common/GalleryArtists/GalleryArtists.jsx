@@ -21,11 +21,7 @@ export const GalleryArtists = () => {
   }, []);
 
   return (
-    <Container
-      fluid
-      className="d-flex"
-      id="artists"
-    >
+    <Container fluid className="d-flex" id="artists">
       <Row className="gallery-container1">
         {tattooArtists.map((artist, index) => (
           <Col key={index} xs={12} sm={6} md={4} lg={4}>

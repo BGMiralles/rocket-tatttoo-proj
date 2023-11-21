@@ -113,25 +113,21 @@ export const NewAppointment = () => {
       }
     }
 
-    // Convertir tattoo_artist y tattoo a enteros
     const tattooArtistId = parseInt(appointment.tattoo_artist, 10);
     const tattooId = parseInt(appointment.tattoo, 10);
 
     if (isNaN(tattooArtistId) || isNaN(tattooId)) {
-      // Manejar el caso en el que no se pueda convertir a entero
       console.error(
         "Error: No se pueden convertir tattoo_artist y tattoo a enteros."
       );
       return;
     }
 
-    // Formatear la fecha
     const formattedDate = new Date(appointment.date)
       .toISOString()
       .slice(0, 19)
       .replace("T", " ");
 
-    // Crear un nuevo objeto de cita con tattoo_artist y tattoo como enteros y la fecha formateada
     const formattedAppointment = {
       ...appointment,
       tattoo_artist_id: tattooArtistId,
@@ -141,10 +137,7 @@ export const NewAppointment = () => {
 
     newAppointment(formattedAppointment, datosRdxUser.credentials)
       .then((resultado) => {
-        // Si todo ha ido bien, redirigiremos a la página deseada.
-        setTimeout(() => {
-          navigate("/appointments");
-        }, 500);
+        navigate("/appointments");
       })
       .catch((error) => console.log(error));
   };

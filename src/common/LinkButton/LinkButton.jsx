@@ -1,14 +1,13 @@
-import './LinkButton.css'
+import "./LinkButton.css";
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-export const LinkButton = ({path, title}) => {
+export const LinkButton = ({ path, title }) => {
+  const navigate = useNavigate();
 
-     const navigate = useNavigate();
-
-     return (
-         <div className="linkButtonDesign" onClick={()=>navigate(path)}>
-            {title}
-         </div>
-     )
-}
+  return (
+    <div className="linkButtonDesign" onClick={() => navigate(path)}>
+      {title}
+    </div>
+  );
+};

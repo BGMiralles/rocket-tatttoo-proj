@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './FlipCardData.css';
+import React, { useState } from "react";
+import "./FlipCardData.css";
 
 export const FlipCardData = ({ photo, name, description, price }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -9,7 +9,11 @@ export const FlipCardData = ({ photo, name, description, price }) => {
   };
 
   return (
-    <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip} style={{ marginBottom: '35em' }}>
+    <div
+      className={`flip-card ${isFlipped ? "flipped" : ""}`}
+      onClick={handleFlip}
+      style={{ marginBottom: "35em" }}
+    >
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img src={photo} alt={name} />
