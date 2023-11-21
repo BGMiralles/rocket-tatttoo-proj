@@ -137,15 +137,19 @@ Vista del panel de usuario
 <img src = "./src/img/user1.JPG" width = "600px" alt ="User">
 
 Vista pestaña Appointments
+
 <img src = "./src/img/user2.JPG" width = "600px" alt ="Appointments">
 
 Vista de edicion dentro de Appointments
+
 <img src = "./src/img/user3.JPG" width = "600px" alt ="Edit">
 
 Vista New Appointment
+
 <img src = "./src/img/user4.JPG" width = "600px" alt ="New Appointment">
 
 Vista Perfil
+
 <img src = "./src/img/user5.JPG" width = "600px" alt ="Profile">
 
 ###### Panel de admin
@@ -155,9 +159,11 @@ Vista del panel de admin
 <img src = "./src/img/admin1.JPG" width = "600px" alt ="Vista principal Admin">
 
 Vista Profile de Admin
+
 <img src = "./src/img/admin2.JPG" width = "600px" alt ="Profile">
 
 Vista Edit Appointments Profile
+
 <img src = "./src/img/admin3.JPG" width = "600px" alt ="Edit">
 
 ###### Info a pie de pagina
