@@ -1,4 +1,4 @@
-<h1 align="center"> MATASUEGRAS TATTOO ESTUDIO</h1>
+<h1 align="center"> ROCKET TATTOO ESTUDIO</h1>
 ​
 ​
 <p align="center">Proyecto 5 - Web estudio de tatuajes- Semana 9-10</p>
