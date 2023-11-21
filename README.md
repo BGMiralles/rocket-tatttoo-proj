@@ -30,10 +30,6 @@ Desarrollada como formacion del Bootcamp de Full Stack Developer de Geekshubs Ac
   
 
 
-​<p align= "center"><a href = "https://vimeo.com/885968667?share=copy">HAZ CLICK PARA VER EL VIDEO DE LA WEB EN FUNCIONAMIENTO</a></p>
-
-​
-
 ## Tabla de contenidos
 
 ​
